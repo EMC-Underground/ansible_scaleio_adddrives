@@ -1,0 +1,3 @@
+  vars:
+    mdm_name: "{{ mdm_name }}"
+    user_name: "{{ user_name }}"

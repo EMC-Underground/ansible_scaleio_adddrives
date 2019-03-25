@@ -1,0 +1,8 @@
+---
+- hosts: all
+  #  become: true
+  vars:
+    mdm_name: "{{ mdm_name }}"
+    user_name: "{{ user_name }}"
+  roles:
+  - basic
