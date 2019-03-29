@@ -7,7 +7,7 @@
 
 - name: "Get ScaleIO token for Auth"
   uri:
-    url: https://{{ vxflex_gateway_ip }}/api/login
+    url: https://{{ vxflex_gateway_ip }}:{{ vxflex_gateway_https_port }}/api/login
     return_content: yes
     user: "{{ vxflex_gateway_username }}"
     password: "{{ vxflex_gateway_pw }}"
@@ -21,7 +21,7 @@
 
 - name: "Query SDS ID Number to Pass to Create Device"
   uri:
-    url: https://{{ vxflex_gateway_ip }}/api/types/Sds/instances/action/queryIdByKey
+    url: https://{{ vxflex_gateway_ip }}:{{ vxflex_gateway_https_port }}/api/types/Sds/instances/action/queryIdByKey
     method: POST
     user: "{{ vxflex_gateway_username }}"
     password: "{{ msg.json }}"
@@ -38,7 +38,7 @@
 
 - name: "Query Protection ID to pass to Create Device"
   uri:
-    url: https://{{ vxflex_gateway_ip }}/api/types/ProtectionDomain/instances/action/queryIdByKey
+    url: https://{{ vxflex_gateway_ip }}:{{ vxflex_gateway_https_port }}/api/types/ProtectionDomain/instances/action/queryIdByKey
     method: POST
     user: "{{ vxflex_gateway_username }}"
     password: "{{ msg.json }}"
@@ -54,7 +54,7 @@
 
 - name: "Query Storage Pool ID to pass to Create Device"
   uri:
-    url: https://{{ vxflex_gateway_ip }}/api/types/StoragePool/instances/action/queryIdByKey
+    url: https://{{ vxflex_gateway_ip }}:{{ vxflex_gateway_https_port }}/api/types/StoragePool/instances/action/queryIdByKey
     method: POST
     user: "{{ vxflex_gateway_username }}"
     password: "{{ msg.json }}"
@@ -74,7 +74,7 @@
 
 - name: "Add device to SDS servers"
   uri:
-    url: https://{{ vxflex_gateway_ip }}/api/types/Device/instances
+    url: https://{{ vxflex_gateway_ip }}:{{ vxflex_gateway_https_port }}/api/types/Device/instances
     method: POST
     user: "{{ vxflex_gateway_username }}"
     password: "{{ msg.json }}"
